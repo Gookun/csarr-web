@@ -14,7 +14,6 @@
 
 {% if page.image.feature %}
 <div class="entry-header">
-  {% if page.image.credit %}<div class="image-credit">Image source: {% if page.image.creditlink %}<a href="{{ page.image.creditlink }}">{% endif %}{{ page.image.credit }}{% if page.image.creditlink %}</a>{% endif %}</div><!-- /.image-credit -->{% endif %}
   <div class="entry-image">
     <img src="{{ site.url }}/images/{{ page.image.feature }}" alt="{{ page.title }}">
   </div><!-- /.entry-image -->
@@ -25,19 +24,28 @@
   <article class="hentry">
     <header class="header-title">
       <div class="header-title-wrap">
+      <img src="{{ site.url }}/images/csarr_header.png" alt="csarr logo">
         {% if page.link %}
           <h1 class="entry-title"><a href="{{ page.link }}">{{ page.title }}</a></h1>
         {% else %}
           <h1 class="entry-title"><a href="{{ site.url }}{{ page.url }}" rel="bookmark" title="{{ page.title }}">{{ page.title }}</a></h1>
         {% endif %}
-        <h2>{{ page.date | date: "%B %d, %Y" }}</h2>
-        {% if site.reading_time %}
-        <p class="entry-reading-time">
-          <i class="fa fa-clock-o"></i>
-          {% assign readtime = content | number_of_words | divided_by:site.words_per_minute %}
-          Reading time ~{% if readtime <= 1 %}1 minute{% else %}{{ readtime }} minutes{% endif %}
-        </p><!-- /.entry-reading-time -->
-        {% endif %}
+        <h2>{% assign m = page.date | date: "%-m" %}
+            {{ page.date | date: "%-d" }}
+            {% case m %}
+              {% when '1' %}Janvier
+              {% when '2' %}Février
+              {% when '3' %}Mars
+              {% when '4' %}Avril
+              {% when '5' %}Mai
+              {% when '6' %}Juillet
+              {% when '8' %}Août
+              {% when '9' %}Septembre
+              {% when '10' %}Octobre
+              {% when '11' %}Novembre
+              {% when '12' %}Decembre
+            {% endcase %}
+            {{ page.date | date: "%Y" }}</h2>
       </div><!-- /.header-title-wrap -->
     </header>
     <div class="entry-content">

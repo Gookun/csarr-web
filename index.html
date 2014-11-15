@@ -1,6 +1,6 @@
 ---
 layout: post-index
-title: Latest Posts
+title: Blog de l'équipe CSARR
 description: "Describe this nonsense."
 tags: [Jekyll, theme, themes, responsive, blog, modern]
 comments: false
@@ -38,12 +38,12 @@ image:
 <div class="pagination">
   {% if paginator.previous_page %}
     {% if paginator.previous_page == 1 %}
-      <a href="{{ site.url }}" class="btn">Previous</a>
+      <a href="{{ site.url }}" class="btn">Précédent</a>
     {% else %}
-      <a href="{{ site.url }}/page{{ paginator.previous_page }}" class="btn">Previous</a>
+      <a href="{{ site.url }}/page{{ paginator.previous_page }}" class="btn">Précédent</a>
     {% endif %}
   {% else %}
-    Previous
+    Précédent
   {% endif %}
   <ul class="inline-list">
     <li>
@@ -64,8 +64,8 @@ image:
     {% endfor %}
   </ul>
   {% if paginator.next_page %}
-    <a href="{{ site.url }}/page{{ paginator.next_page }}" class="btn">Next</a>
+    <a href="{{ site.url }}/page{{ paginator.next_page }}" class="btn">Suivant</a>
   {% else %}
-    Next
+    Suivant
   {% endif %}
 </div><!-- /.pagination -->
